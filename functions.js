@@ -69,3 +69,30 @@ function triggerCustomEvent(category = -1, action = -1, label = -1) {
   xhr.send(data);
   return -1;
 }
+
+async function triggerWebUserData(firstname = "", lastname = "") {
+  if (getCookie("useremail") === null) {
+    return -1;
+  }
+
+  let data = JSON.stringify({
+    websiteid: "73537740-b4ba-11ed-b063-59b10fd8cc4b",
+    authkey:
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRlcnByaXNlX2lkIjo0NDExLCJpYXQiOjE2NzcyOTUxMzN9.oueDExZn6WlHWA838b_65wnUZntHnaZ_VACFfdrqWVY",
+    web_subs_id: "-1",
+    email: getCookie("useremail"),
+    firstname: firstname,
+    lastname: lastname,
+  });
+
+  let xhr = new XMLHttpRequest();
+  xhr.addEventListener("readystatechange", function () {
+    if (this.readyState === 4) {
+      console.log(this.responseText);
+    }
+  });
+  xhr.open("POST", "https://app.factoreal.com/api/v1/webuserdata", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(data);
+  return -1;
+}

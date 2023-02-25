@@ -198,7 +198,7 @@
               <li>
                 <a href="contact.html">Contact</a>
               </li>
-             <li>
+              <li>
                 <a
                   id="userFlag"
                   href="./index.html"
@@ -447,7 +447,10 @@
         .querySelector('#register-form [type="submit"]')
         .addEventListener("click", async function (e) {
           let email = document.querySelector("#register-email").value;
+          let firstname = document.querySelector("#firstname").value;
+          let lastname = document.querySelector("#lastname").value;
           setCookie("useremail", email, 30);
+          await triggerWebUserData(firstname, lastname);
         });
     </script>
     <script>
@@ -458,7 +461,7 @@
           setCookie("useremail", email, 30);
         });
     </script>
-   <script type="text/javascript">
+    <script type="text/javascript">
       (function () {
         let checkEmail = getCookie("useremail");
         let userFlag = document.getElementById("userFlag");
