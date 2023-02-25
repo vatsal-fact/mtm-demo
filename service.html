@@ -199,7 +199,11 @@
                 <a href="contact.html">Contact</a>
               </li>
               <li>
-                <a href="login_register.html">Login / Register</a>
+                <a
+                  id="userFlag"
+                  href="./index.html"
+                  onclick="return checkUserFlag()"
+                ></a>
               </li>
             </ul>
           </div>
@@ -503,6 +507,7 @@
     <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="./functions.js"></script>
     <script>
       (function () {
         (a = document.createElement("script")),
@@ -513,6 +518,19 @@
             ftreal.init("73537740-b4ba-11ed-b063-59b10fd8cc4b", true);
           }),
           m.parentNode.insertBefore(a, m);
+      })();
+    </script>
+    <script type="text/javascript">
+      (function () {
+        let checkEmail = getCookie("useremail");
+        let userFlag = document.getElementById("userFlag");
+        if (checkEmail != null) {
+          userFlag.innerHTML = "Logout";
+          userFlag.href = "./index.html";
+        } else {
+          userFlag.innerHTML = "Login / Register";
+          userFlag.href = "./login_register.html";
+        }
       })();
     </script>
   </body>

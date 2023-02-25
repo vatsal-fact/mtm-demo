@@ -23,6 +23,10 @@ function eraseCookie(name) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
 
+function checkUserFlag() {
+  eraseCookie("useremail");
+}
+
 function triggerCustomEvent(category = -1, action = -1, label = -1) {
   if (getCookie("useremail") === null) {
     return -1;

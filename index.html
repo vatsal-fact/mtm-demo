@@ -202,7 +202,11 @@
                 <a href="contact.html">Contact</a>
               </li>
               <li>
-                <a href="login_register.html">Login / Register</a>
+                <a
+                  id="userFlag"
+                  href="./index.html"
+                  onclick="return checkUserFlag()"
+                ></a>
               </li>
             </ul>
           </div>
@@ -892,49 +896,18 @@
           m.parentNode.insertBefore(a, m);
       })();
     </script>
-    <script>
-      document
-        .querySelector('#register-form [type="submit"]')
-        .addEventListener("click", async function (e) {});
-      let data = JSON.stringify({
-        websiteid: "73537740-b4ba-11ed-b063-59b10fd8cc4b",
-        authkey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRlcnByaXNlX2lkIjo0NDExLCJpYXQiOjE2NzcyOTUxMzN9.oueDExZn6WlHWA838b_65wnUZntHnaZ_VACFfdrqWVY",
-        web_subs_id: "-1",
-        event: {
-          event_type: "web_push",
-          eventcategory: "",
-          eventaction: "",
-          eventlabel: "",
-          value: "",
-          valuetype: "",
-          timestamp: new Date()
-            .toISOString()
-            .replace("T", " ")
-            .replace("Z", ""),
-          contact_variables: {
-            email: "test1@test.com",
-          },
-          variables: {},
-        },
-      });
-
-      let xhr = new XMLHttpRequest();
-      xhr.withCredentials = true;
-
-      xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-          console.log(this.responseText);
+    <script type="text/javascript">
+      (function () {
+        let checkEmail = getCookie("useremail");
+        let userFlag = document.getElementById("userFlag");
+        if (checkEmail != null) {
+          userFlag.innerHTML = "Logout";
+          userFlag.href = "./index.html";
+        } else {
+          userFlag.innerHTML = "Login / Register";
+          userFlag.href = "./login_register.html";
         }
-      });
-
-      xhr.open(
-        "POST",
-        "https://app.factoreal.com/api/v1/registerwebcustomevent"
-      );
-      xhr.setRequestHeader("Content-Type", "application/json");
-
-      xhr.send(data);
+      })();
     </script>
   </body>
 </html>

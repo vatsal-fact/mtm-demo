@@ -198,8 +198,12 @@
               <li>
                 <a href="contact.html">Contact</a>
               </li>
-              <li>
-                <a href="login_register.html">Login / Register</a>
+             <li>
+                <a
+                  id="userFlag"
+                  href="./index.html"
+                  onclick="return checkUserFlag()"
+                ></a>
               </li>
             </ul>
           </div>
@@ -239,7 +243,13 @@
                   <a
                     class="btn btn-w btn-round"
                     href="#"
-                    onclick='return triggerCustomEvent("MTM-WEBSITE","REQUEST","CONNECT WITH US")'
+                    onclick='return triggerCustomEvent("MTM-WEBSITE","REQUEST","CONNECT WITH US"),Swal.fire({
+                      html: "<h4>We will get in touch with you.</h4>",
+                      showConfirmButton: false,
+                      timer: 5000,
+                      showCloseButton: true,
+                      width: 600,
+                    });'
                     >Connect with us</a
                   >
                 </div>
@@ -489,6 +499,8 @@
     <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="/functions.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       (function () {
         (a = document.createElement("script")),
@@ -499,6 +511,19 @@
             ftreal.init("73537740-b4ba-11ed-b063-59b10fd8cc4b", true);
           }),
           m.parentNode.insertBefore(a, m);
+      })();
+    </script>
+   <script type="text/javascript">
+      (function () {
+        let checkEmail = getCookie("useremail");
+        let userFlag = document.getElementById("userFlag");
+        if (checkEmail != null) {
+          userFlag.innerHTML = "Logout";
+          userFlag.href = "./index.html";
+        } else {
+          userFlag.innerHTML = "Login / Register";
+          userFlag.href = "./login_register.html";
+        }
       })();
     </script>
   </body>

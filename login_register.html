@@ -198,8 +198,12 @@
               <li>
                 <a href="contact.html">Contact</a>
               </li>
-              <li>
-                <a href="login_register.html">Login / Register</a>
+             <li>
+                <a
+                  id="userFlag"
+                  href="./index.html"
+                  onclick="return checkUserFlag()"
+                ></a>
               </li>
             </ul>
           </div>
@@ -453,6 +457,19 @@
           let email = document.querySelector("#login-email").value;
           setCookie("useremail", email, 30);
         });
+    </script>
+   <script type="text/javascript">
+      (function () {
+        let checkEmail = getCookie("useremail");
+        let userFlag = document.getElementById("userFlag");
+        if (checkEmail != null) {
+          userFlag.innerHTML = "Logout";
+          userFlag.href = "./index.html";
+        } else {
+          userFlag.innerHTML = "Login / Register";
+          userFlag.href = "./login_register.html";
+        }
+      })();
     </script>
   </body>
 </html>
