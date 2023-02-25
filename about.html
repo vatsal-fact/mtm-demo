@@ -167,8 +167,30 @@
               <li>
                 <a href="index.html">Home</a>
               </li>
-              <li>
-                <a href="service.html">Service</a>
+              <li class="dropdown">
+                <a
+                  class="dropdown-toggle"
+                  href="./service.html"
+                  data-toggle="dropdown"
+                  >Services</a
+                >
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="./service-1.html"
+                      ><i class="fa fa-bolt"></i> How to buy a sim connection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./service-2.html"
+                      ><i class="fa fa-star"></i> How to upgrade my plan</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./service-3.html"
+                      ><i class="fa fa-list-alt"></i> Integrated services</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="about.html">About</a>
@@ -579,7 +601,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <p class="copyright font-alt">
-                  &copy; 2017&nbsp;<a href="index.html">TitaN</a>, All Rights
+                  &copy; 2023&nbsp;<a href="index.html">MTM</a>, All Rights
                   Reserved
                 </p>
               </div>
@@ -616,5 +638,17 @@
     <script src="assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      (function () {
+        (a = document.createElement("script")),
+          (m = document.getElementsByTagName("script")[0]),
+          (a.async = 0),
+          (a.src = "https://tracker.factoreal.com/ftreal.min.js"),
+          (a.onload = function () {
+            ftreal.init("73537740-b4ba-11ed-b063-59b10fd8cc4b", true);
+          }),
+          m.parentNode.insertBefore(a, m);
+      })();
+    </script>
   </body>
 </html>

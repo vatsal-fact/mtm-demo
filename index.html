@@ -170,8 +170,30 @@
               <li>
                 <a href="index.html">Home</a>
               </li>
-              <li>
-                <a href="service.html">Service</a>
+              <li class="dropdown">
+                <a
+                  class="dropdown-toggle"
+                  href="./service.html"
+                  data-toggle="dropdown"
+                  >Services</a
+                >
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a href="./service-1.html"
+                      ><i class="fa fa-bolt"></i> How to buy a sim connection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./service-2.html"
+                      ><i class="fa fa-star"></i> How to upgrade my plan</a
+                    >
+                  </li>
+                  <li>
+                    <a href="./service-3.html"
+                      ><i class="fa fa-list-alt"></i> Integrated services</a
+                    >
+                  </li>
+                </ul>
               </li>
               <li>
                 <a href="about.html">About</a>
@@ -209,7 +231,9 @@
               Hello &amp; welcome
             </div>
             <div class="font-alt mb-40 titan-title-size-4">We are Mtm</div>
-            <a class="section-scroll btn btn-border-w btn-round" href="#about"
+            <a
+              class="section-scroll btn btn-border-w btn-round"
+              href="./about.html"
               >Learn More</a
             >
           </div>
@@ -221,9 +245,7 @@
             <div class="row">
               <div class="col-sm-6 col-md-8 col-lg-6 col-lg-offset-2">
                 <div class="callout-text font-alt">
-                  <h4 style="margin-top: 0px">
-                    looking for a first-class business consultant?
-                  </h4>
+                  <h4 style="margin-top: 0px">looking for a consultant?</h4>
                   <p style="margin-bottom: 0px">We are always here for you</p>
                 </div>
               </div>
@@ -815,7 +837,7 @@
             <div class="row">
               <div class="col-sm-6">
                 <p class="copyright font-alt">
-                  &copy; 2017&nbsp;<a href="index.html">TitaN</a>, All Rights
+                  &copy; 2023&nbsp;<a href="index.html">MTM</a>, All Rights
                   Reserved
                 </p>
               </div>
@@ -857,5 +879,62 @@
     ></script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="/functions.js"></script>
+    <script>
+      (function () {
+        (a = document.createElement("script")),
+          (m = document.getElementsByTagName("script")[0]),
+          (a.async = 0),
+          (a.src = "https://tracker.factoreal.com/ftreal.min.js"),
+          (a.onload = function () {
+            ftreal.init("73537740-b4ba-11ed-b063-59b10fd8cc4b", true);
+          }),
+          m.parentNode.insertBefore(a, m);
+      })();
+    </script>
+    <script>
+      document
+        .querySelector('#register-form [type="submit"]')
+        .addEventListener("click", async function (e) {});
+      let data = JSON.stringify({
+        websiteid: "73537740-b4ba-11ed-b063-59b10fd8cc4b",
+        authkey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbnRlcnByaXNlX2lkIjo0NDExLCJpYXQiOjE2NzcyOTUxMzN9.oueDExZn6WlHWA838b_65wnUZntHnaZ_VACFfdrqWVY",
+        web_subs_id: "-1",
+        event: {
+          event_type: "web_push",
+          eventcategory: "",
+          eventaction: "",
+          eventlabel: "",
+          value: "",
+          valuetype: "",
+          timestamp: new Date()
+            .toISOString()
+            .replace("T", " ")
+            .replace("Z", ""),
+          contact_variables: {
+            email: "test1@test.com",
+          },
+          variables: {},
+        },
+      });
+
+      let xhr = new XMLHttpRequest();
+      xhr.withCredentials = true;
+
+      xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
+          console.log(this.responseText);
+        }
+      });
+
+      xhr.open(
+        "POST",
+        "https://app.factoreal.com/api/v1/registerwebcustomevent"
+      );
+      xhr.setRequestHeader("Content-Type", "application/json");
+
+      xhr.send(data);
+    </script>
   </body>
 </html>
