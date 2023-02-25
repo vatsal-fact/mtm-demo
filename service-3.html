@@ -8,7 +8,7 @@
     Document Title
     =============================================
     -->
-    <title>Mtm</title>
+    <title>MTM | Download MTM app</title>
     <!--  
     Favicons
     =============================================
@@ -160,7 +160,7 @@
               <span class="sr-only">Toggle navigation</span
               ><span class="icon-bar"></span><span class="icon-bar"></span
               ><span class="icon-bar"></span></button
-            ><a class="navbar-brand" href="index.html">Mtm</a>
+            ><a class="navbar-brand" href="index.html">MTM</a>
           </div>
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -176,6 +176,11 @@
                 >
                 <ul class="dropdown-menu" role="menu">
                   <li>
+                    <a href="./service-4.html"
+                      ><i class="fa fa-tasks"></i> View plans</a
+                    >
+                  </li>
+                  <li>
                     <a href="./service-1.html"
                       ><i class="fa fa-bolt"></i> How to buy a sim connection</a
                     >
@@ -187,7 +192,7 @@
                   </li>
                   <li>
                     <a href="./service-3.html"
-                      ><i class="fa fa-list-alt"></i> Integrated services</a
+                      ><i class="fa fa-list-alt"></i> Download MTM app</a
                     >
                   </li>
                 </ul>
@@ -198,7 +203,7 @@
               <li>
                 <a href="contact.html">Contact</a>
               </li>
-             <li>
+              <li>
                 <a
                   id="userFlag"
                   href="./index.html"
@@ -217,7 +222,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Integrated services</h2>
+                <h2 class="module-title font-alt">Download MTM app</h2>
                 <div class="module-subtitle font-serif">
                   Exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -233,9 +238,9 @@
               <div class="col-sm-6 col-md-8 col-lg-6 col-lg-offset-2">
                 <div class="callout-text font-alt">
                   <h3 class="callout-title">
-                    We can show you our list of services.
+                    Use the MTM mobile app to experience its feature
                   </h3>
-                  <p>Schedule a call.</p>
+                  <p>Click on the download</p>
                 </div>
               </div>
               <div class="col-sm-6 col-md-4 col-lg-2">
@@ -243,14 +248,14 @@
                   <a
                     class="btn btn-w btn-round"
                     href="#"
-                    onclick='return triggerCustomEvent("MTM-WEBSITE","REQUEST","CONNECT WITH US"),Swal.fire({
-                      html: "<h4>We will get in touch with you.</h4>",
+                    onclick='return triggerCustomEvent("MTM-WEBSITE","REQUEST","DOWNLOAD MTM APP"),Swal.fire({
+                      html: "<h4>You will receive the mobile app download link shortly.</h4>",
                       showConfirmButton: false,
                       timer: 5000,
                       showCloseButton: true,
                       width: 600,
                     });'
-                    >Connect with us</a
+                    >Download</a
                   >
                 </div>
               </div>
@@ -380,7 +385,7 @@
             <div class="row">
               <div class="col-sm-3">
                 <div class="widget">
-                  <h5 class="widget-title font-alt">About Mtm</h5>
+                  <h5 class="widget-title font-alt">About MTM</h5>
                   <p>
                     The languages only differ in their grammar, their
                     pronunciation and their most common words.
@@ -513,8 +518,9 @@
           m.parentNode.insertBefore(a, m);
       })();
     </script>
-   <script type="text/javascript">
+    <script type="text/javascript">
       (function () {
+        triggerCustomEvent("MTM-WEBSITE", "PAGE VISIT", "DOWNLOAD MTM APP");
         let checkEmail = getCookie("useremail");
         let userFlag = document.getElementById("userFlag");
         if (checkEmail != null) {
